@@ -81,25 +81,20 @@ function player_falling()
     var y = player1.graphic.position.y | 0;
     var length = noGround.length;
     var element = null;
-    if(player1.graphic.life > 0)
-    {
-        for (var i = 0; i < length; i++) {
-            element = noGround[i];
+    for (var i = 0; i < length; i++) {
+        element = noGround[i];
 
-            var tileX = (element[0]) | 0;
-            var tileY = (element[1]) | 0;
-            var mtileX = (element[0] + sizeOfTileX) | 0;
-            var mtileY = (element[1] + sizeOfTileY) | 0;
+        var tileX = (element[0]) | 0;
+        var tileY = (element[1]) | 0;
+        var mtileX = (element[0] + sizeOfTileX) | 0;
+        var mtileY = (element[1] + sizeOfTileY) | 0;
 
-            if ((x > tileX)
-                && (x < mtileX)
-                && (y > tileY) 
-                && (y < mtileY))
-            {
-                player1.dead();
-            }
-            player1.graphic.life - 1;
+        if ((x > tileX)
+            && (x < mtileX)
+            && (y > tileY) 
+            && (y < mtileY))
+        {
+            player1.dead();
         }
     }
-
 }
